@@ -1,4 +1,4 @@
-local MAX_LEVELS = 1
+local MAX_LEVELS = 3
 
 function init(self)
 	self.level = nil
@@ -23,6 +23,12 @@ function on_message(self, message_id, message, sender)
 		else
 			msg.post("#", "show_level", { level = self.level + 1 })
 		end
+	elseif message_id == hash("reset_level") then
+		msg.post("#level" .. self.level, "unload")
+		timer.delay(1, false, function()
+			msg.post("#", "show_level", { level = self.level })
+			self.level = nil
+		end)
 	elseif message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
 		msg.post(".", "acquire_input_focus")
@@ -32,7 +38,7 @@ end
 function on_input(self, action_id, action)
 	if action_id and action.released and not self.level then
 		msg.post("#instructions", "disable")
-		msg.post("#", "show_level", { level = 1})
+		msg.post("#", "show_level", { level = 2 })
 	end
 end
 

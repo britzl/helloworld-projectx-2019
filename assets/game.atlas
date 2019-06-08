@@ -1,0 +1,111 @@
+images {
+  image: "/assets/images/game/alienBlue_round.png"
+}
+images {
+  image: "/assets/images/game/alienBlue_square.png"
+}
+images {
+  image: "/assets/images/game/alienBlue_suit.png"
+}
+images {
+  image: "/assets/images/game/elementMetal013.png"
+}
+images {
+  image: "/assets/images/game/elementMetal045.png"
+}
+images {
+  image: "/assets/images/game/elementMetal046.png"
+}
+images {
+  image: "/assets/images/game/elementMetal047.png"
+}
+images {
+  image: "/assets/images/game/elementMetal048.png"
+}
+images {
+  image: "/assets/images/game/shipBlue_manned.png"
+}
+images {
+  image: "/assets/images/game/goal.png"
+}
+images {
+  image: "/assets/images/game/enemyBlack1.png"
+}
+images {
+  image: "/assets/images/game/enemyBlack2.png"
+}
+images {
+  image: "/assets/images/game/enemyBlack3.png"
+}
+images {
+  image: "/assets/images/game/enemyBlack4.png"
+}
+images {
+  image: "/assets/images/game/enemyBlack5.png"
+}
+images {
+  image: "/assets/images/game/enemyBlue1.png"
+}
+images {
+  image: "/assets/images/game/enemyBlue2.png"
+}
+images {
+  image: "/assets/images/game/enemyBlue3.png"
+}
+images {
+  image: "/assets/images/game/enemyBlue4.png"
+}
+images {
+  image: "/assets/images/game/enemyBlue5.png"
+}
+images {
+  image: "/assets/images/game/enemyGreen1.png"
+}
+images {
+  image: "/assets/images/game/enemyGreen2.png"
+}
+images {
+  image: "/assets/images/game/enemyGreen3.png"
+}
+images {
+  image: "/assets/images/game/enemyGreen4.png"
+}
+images {
+  image: "/assets/images/game/enemyGreen5.png"
+}
+images {
+  image: "/assets/images/game/enemyRed1.png"
+}
+images {
+  image: "/assets/images/game/enemyRed2.png"
+}
+images {
+  image: "/assets/images/game/enemyRed3.png"
+}
+images {
+  image: "/assets/images/game/enemyRed4.png"
+}
+images {
+  image: "/assets/images/game/enemyRed5.png"
+}
+images {
+  image: "/assets/images/game/playerShip1_blue.png"
+}
+images {
+  image: "/assets/images/game/shield1.png"
+}
+images {
+  image: "/assets/images/game/shield2.png"
+}
+images {
+  image: "/assets/images/game/shield3.png"
+}
+images {
+  image: "/assets/images/game/ufoBlue.png"
+}
+images {
+  image: "/assets/images/game/laserBlue07.png"
+}
+margin: 0
+extrude_borders: 1
+inner_padding: 0

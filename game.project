@@ -47,3 +47,9 @@ app_icon_96x96 = /assets/appicons/icon_96.png
 app_icon_144x144 = /assets/appicons/icon_144.png
 app_icon_192x192 = /assets/appicons/icon_192.png
 
+[physics]
+gravity_y = -1000.0
+scale = 0.02
+max_collisions = 64
+debug = 1
+

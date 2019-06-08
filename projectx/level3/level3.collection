@@ -1,10 +1,10 @@
-name: "level1"
+name: "level3"
 instances {
   id: "goal"
   prototype: "/projectx/shared/player-goal.go"
   position {
     x: 1076.0
-    y: 593.0
+    y: 320.0
     z: 0.0
   }
   rotation {
@@ -20,11 +20,11 @@ instances {
   }
 }
 collection_instances {
-  id: "player1"
-  collection: "/projectx/level1/player1.collection"
+  id: "player3"
+  collection: "/projectx/level3/player3.collection"
   position {
     x: 85.0
-    y: 98.0
+    y: 320.0
     z: 0.0
   }
   rotation {
@@ -41,10 +41,10 @@ collection_instances {
 }
 scale_along_z: 0
 embedded_instances {
-  id: "level1"
+  id: "level3"
   data: "components {\n"
-  "  id: \"level1\"\n"
-  "  component: \"/projectx/level1/level1.script\"\n"
+  "  id: \"level2\"\n"
+  "  component: \"/projectx/level3/level3.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -95,9 +95,27 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"REACH THE LOGO!\\\"\\n"
+  "text: \\\"GET THE LOGO!\\\"\\n"
   "font: \\\"/assets/projectx.font\\\"\\n"
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"enemyfactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/projectx/shared/enemy.go\\\"\\n"
+  "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"

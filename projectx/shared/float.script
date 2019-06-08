@@ -1,0 +1,3 @@
+function init(self)
+	go.animate(".", "position.y", go.PLAYBACK_LOOP_PINGPONG, 10, go.EASING_INOUTQUAD, 2)
+end

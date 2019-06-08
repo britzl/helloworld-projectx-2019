@@ -1,6 +1,6 @@
 components {
-  id: "player-ufo"
-  component: "/projectx/shared/player-ufo.script"
+  id: "enemy"
+  component: "/projectx/shared/enemy.script"
   position {
     x: 0.0
     y: 0.0
@@ -17,7 +17,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/assets/game.atlas\"\n"
-  "default_animation: \"shipBlue_manned\"\n"
+  "default_animation: \"enemyRed3\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
@@ -29,8 +29,8 @@ embedded_components {
   rotation {
     x: 0.0
     y: 0.0
-    z: 0.0
-    w: 1.0
+    z: -0.70710677
+    w: 0.70710677
   }
 }
 embedded_components {
@@ -41,14 +41,15 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"player\"\n"
-  "mask: \"enemy\"\n"
+  "group: \"enemy\"\n"
+  "mask: \"player\"\n"
+  "mask: \"bullet\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
   "    position {\n"
   "      x: 0.0\n"
-  "      y: 15.0\n"
+  "      y: 0.0\n"
   "      z: 0.0\n"
   "    }\n"
   "    rotation {\n"
@@ -60,7 +61,7 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 45.0\n"
+  "  data: 40.0\n"
   "}\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"

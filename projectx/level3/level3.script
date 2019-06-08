@@ -1,0 +1,11 @@
+function init(self)
+	go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 590, go.EASING_OUTBOUNCE, 1)
+
+	timer.delay(1.5, true, function()
+		local pos = vmath.vector3(1200, math.random(40, 560), 0)
+		local enemy = factory.create("#enemyfactory", pos)
+		go.animate(enemy, "position.x", go.PLAYBACK_ONCE_FORWARD, -100, go.EASING_LINEAR, 3, 0, function()
+			go.delete(enemy)
+		end)
+	end)
+end
