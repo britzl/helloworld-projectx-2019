@@ -1,0 +1,7 @@
+function init(self)
+	go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 600, go.EASING_OUTBOUNCE, 1)
+	go.animate("goal", "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1050, 550, 0), go.EASING_OUTQUAD, 1)
+	go.animate("player", "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(100, 100, 0), go.EASING_OUTQUAD, 1, 0, function()
+		msg.post("player", "acquire_input_focus")
+	end)
+end

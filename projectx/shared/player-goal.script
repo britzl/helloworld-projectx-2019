@@ -1,0 +1,10 @@
+function init(self)
+	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 5)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") and message.group == hash("player") then
+		msg.post(".", "disable")
+		msg.post("projectx:/projectx", "next_level")
+	end
+end

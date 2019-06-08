@@ -1,0 +1,42 @@
+local MAX_LEVELS = 1
+
+function init(self)
+	self.level = nil
+	msg.post(".", "acquire_input_focus")
+	msg.post("#gameover", "disable")
+	msg.post("@render:", "use_fixed_fit_projection", { near = -10, far = 10 })
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("show_level") then
+		print("showing level", message.level)
+		if self.level then
+			msg.post("#level" .. self.level, "unload")
+		end
+		self.level = message.level
+		msg.post("#level" .. message.level, "async_load")
+		msg.post(".", "release_input_focus")
+	elseif message_id == hash("next_level") then
+		if self.level + 1 > MAX_LEVELS then
+			msg.post("#gameover", "enable")
+			msg.post("#level" .. self.level, "unload")
+		else
+			msg.post("#", "show_level", { level = self.level + 1 })
+		end
+	elseif message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+		msg.post(".", "acquire_input_focus")
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id and action.released and not self.level then
+		msg.post("#instructions", "disable")
+		msg.post("#", "show_level", { level = 1})
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
