@@ -9,6 +9,7 @@ function on_input(self, action_id, action)
 
 		-- animate the bullet from the starting position to an end position
 		-- delete the bullet when it has finished moving
+		local pos = go.get_position(bullet)
 		local to = pos + vmath.vector3(1200, -1000, 0)
 		local duration = 0.7 -- time in seconds
 		go.animate(bullet, "position", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_INSINE, duration, 0, function()

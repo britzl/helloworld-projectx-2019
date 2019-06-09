@@ -1,4 +1,4 @@
-local MAX_LEVELS = 3
+local MAX_LEVELS = 6
 
 function init(self)
 	self.level = nil
@@ -9,7 +9,6 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("show_level") then
-		print("showing level", message.level)
 		if self.level then
 			msg.post("#level" .. self.level, "unload")
 		end

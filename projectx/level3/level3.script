@@ -1,9 +1,13 @@
 function init(self)
 	go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 590, go.EASING_OUTBOUNCE, 1)
 
+	-- spawn a new enemy at a regular interval
 	timer.delay(0.5, true, function()
+		-- spawn it to the right of the screen and at a random position on the y-axis
 		local pos = vmath.vector3(1200, math.random(40, 560), 0)
 		local enemy = factory.create("#enemyfactory", pos)
+
+		-- move it across the screen and remove it when done
 		go.animate(enemy, "position.x", go.PLAYBACK_ONCE_FORWARD, -100, go.EASING_LINEAR, 3, 0, function()
 			go.delete(enemy)
 		end)

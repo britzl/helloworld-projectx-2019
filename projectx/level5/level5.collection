@@ -1,7 +1,7 @@
-name: "level4"
+name: "level5"
 instances {
   id: "goal"
-  prototype: "/projectx/shared/player-goal.go"
+  prototype: "/projectx/shared/bullet-goal.go"
   position {
     x: 1076.0
     y: 320.0
@@ -20,11 +20,11 @@ instances {
   }
 }
 collection_instances {
-  id: "player3"
-  collection: "/projectx/level3/player3.collection"
+  id: "player5"
+  collection: "/projectx/level5/player5.collection"
   position {
-    x: 85.0
-    y: 320.0
+    x: 88.0
+    y: 84.0
     z: 0.0
   }
   rotation {
@@ -41,10 +41,10 @@ collection_instances {
 }
 scale_along_z: 0
 embedded_instances {
-  id: "level3"
+  id: "level5"
   data: "components {\n"
-  "  id: \"level3\"\n"
-  "  component: \"/projectx/level3/level3.script\"\n"
+  "  id: \"level5\"\n"
+  "  component: \"/projectx/level5/level5.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -95,27 +95,9 @@ embedded_instances {
   "pivot: PIVOT_CENTER\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"GET THE LOGO!\\\"\\n"
+  "text: \\\"SHOOT THE LOGO!\\\"\\n"
   "font: \\\"/assets/projectx.font\\\"\\n"
   "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"enemyfactory\"\n"
-  "  type: \"factory\"\n"
-  "  data: \"prototype: \\\"/projectx/shared/enemy-ship.go\\\"\\n"
-  "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
