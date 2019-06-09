@@ -1,13 +1,26 @@
+-- the speed in pixels/second that the player is moving
 go.property("speed", 100)
 
 function init(self)
-	self.direction = vmath.vector3(0, 0, 0)
+	-- indicate that the script will get user input to on_input() below
 	msg.post("player", "acquire_input_focus")
+
+	-- direction of movement (x, y, z)
+	-- ignore z since it is a 2d game
+	-- will be set in on_input()
+	self.direction = vmath.vector3(0, 0, 0)
 end
 
 function update(self, dt)
+	-- get current player position
 	local pos = go.get_position()
+
+	-- update the position
+	-- take into account the current direction of movement and the player speed
+	-- also multiply with dt (delta time) to get frame rate independent movement
 	pos = pos + self.direction * self.speed * dt
+
+	-- update the player position
 	go.set_position(pos)
 end
 
@@ -25,9 +38,4 @@ function on_input(self, action_id, action)
 			self.direction.x = 0
 		end
 	end
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
 end

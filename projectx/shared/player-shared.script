@@ -1,5 +1,12 @@
+go.property("float", true)
+
 function init(self)
-	go.animate(".", "position.y", go.PLAYBACK_LOOP_PINGPONG, 10, go.EASING_INOUTQUAD, 2)
+	-- float gently up and down
+	if self.float then
+		go.animate(".", "position.y", go.PLAYBACK_LOOP_PINGPONG, 10, go.EASING_INOUTQUAD, 2)
+	end
+	
+	-- fade in
 	go.set("#sprite", "tint.w", 0)
 	go.animate("#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTQUAD, 1)
 end

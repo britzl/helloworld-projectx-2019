@@ -51,5 +51,8 @@ app_icon_192x192 = /assets/appicons/icon_192.png
 gravity_y = -1000.0
 scale = 0.02
 max_collisions = 64
-debug = 1
+debug = 0
+
+[sprite]
+max_count = 1024
 

@@ -38,11 +38,6 @@ end
 function on_input(self, action_id, action)
 	if action_id and action.released and not self.level then
 		msg.post("#instructions", "disable")
-		msg.post("#", "show_level", { level = 2 })
+		msg.post("#", "show_level", { level = 1 })
 	end
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
 end

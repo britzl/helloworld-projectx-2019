@@ -1,0 +1,53 @@
+-- the speed in degrees/second with which the ship is turning
+-- this is sometimes also called angular velocity
+go.property("turn_speed", 150)
+
+-- the speed in pixels/second the ship is moving in the direction
+-- it is facing
+-- this is sometimes also called linear velocity
+go.property("forward_speed", 300)
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.turn = 0	-- 1 = turning left, 0 = not turning, -1 = turning right
+	self.angle = 0	-- current facing in degrees
+end
+
+function update(self, dt)
+	-- turn
+	self.angle = (self.angle + self.turn * self.turn_speed * dt) % 360
+	
+	-- defold describes rotations using something called quaternions
+	-- we can create a quaternion from an angle in radians
+	local angle_in_radians = math.rad(self.angle)
+	local rotation = vmath.quat_rotation_z(angle_in_radians)
+	go.set_rotation(rotation)
+
+	local pos = go.get_position()
+	-- move the ship in the direction it is facing
+	-- use basic trigonometry to calculate amount to move on the x and y axis
+	-- base this on the angle, self.forward_speed and dt (delta time)
+	-- BONUS: Add code in on_input() so that the player only moves while pressing up
+	go.set_position(pos)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("left") then
+		if action.pressed then
+			self.turn = 1
+		elseif action.released then
+			self.turn = 0
+		end
+	elseif action_id == hash("right") then
+		if action.pressed then
+			self.turn = -1
+		elseif action.released then
+			self.turn = 0
+		end
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

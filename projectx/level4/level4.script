@@ -1,0 +1,3 @@
+function init(self)
+	go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, 590, go.EASING_OUTBOUNCE, 1)
+end

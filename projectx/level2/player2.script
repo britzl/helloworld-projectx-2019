@@ -4,10 +4,14 @@ end
 
 function on_input(self, action_id, action)
 	if (action_id == hash("fire") or action_id == hash("touch")) and action.pressed then
+		-- create a bullet
 		local bullet = factory.create("#bulletfactory")
-		local pos = go.get_position()
+
+		-- animate the bullet from the starting position to an end position
+		-- delete the bullet when it has finished moving
 		local to = pos + vmath.vector3(1200, -1000, 0)
-		go.animate(bullet, "position", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_INSINE, 0.7, 0, function()
+		local duration = 0.7 -- time in seconds
+		go.animate(bullet, "position", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_INSINE, duration, 0, function()
 			go.delete(bullet)
 		end)
 	end
